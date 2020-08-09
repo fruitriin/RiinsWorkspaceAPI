@@ -14,6 +14,14 @@ AllCops:
     - 'vendor/**/*'
     - 'node_modules/**/*'
 
+# 2space強制
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+Layout/FirstMethodParameterLineBreak:
+  Enabled: true
+
 # Ruby 3.0 では文字列リテラルがデフォルトで freeze (＝不変) になるための互換性維持用の指摘
 Style/FrozenStringLiteralComment:
   Enabled: true
