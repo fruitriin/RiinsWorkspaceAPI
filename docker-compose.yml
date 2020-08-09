@@ -1,0 +1,36 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    ports:
+      - "3306:3306"
+
+  web:
+    build: .
+    command: rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/api
+    ports:
+      - "8081:3000"
+    env_file:
+      - ./.env
+    environment:
+      - DB_NAME
+      - DB_HOSTNAME
+      - DB_USERNAME
+      - DB_PASSWORD
+  front:
+    build: ../RiinsWorkspace
+    command: yarn dev
+    volumes:
+      - ../RiinsWorkspace:/riinsworkspace
+    ports:
+      - "8080:8080"
+  adminer:
+    container_name: adminer
+    image: adminer
+    ports:
+      - 8085:8080

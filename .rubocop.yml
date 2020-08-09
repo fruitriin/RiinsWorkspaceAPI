@@ -1,0 +1,62 @@
+require:
+  - rubocop-rails
+
+Rails:
+  Enabled: true
+
+AllCops:
+  NewCops: enable
+  DisplayCopNames: true
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+
+# Ruby 3.0 では文字列リテラルがデフォルトで freeze (＝不変) になるための互換性維持用の指摘
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+# 日本語でのコメントを許可
+Style/AsciiComments:
+  Enabled: false
+
+# トップレベルドキュメン手ションは必須ではない
+Style/Documentation:
+  Enabled: false
+
+# 1 行を 100 文字まで
+Layout/LineLength:
+  Max: 100
+
+# テストと Rake タスクの中でブロック行数を見ない
+Metrics/BlockLength:
+  Exclude:
+    - 'lib/tasks/**/*'
+    - 'spec/**/*'
+
+# private, protected 以下にインデントを入れる
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+# module, class 定義の compact 形式を許可する
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# helper クラス内でインタンス変数を持つことができる
+Rails/HelperInstanceVariable:
+  Enabled: false
+
+# https://github.com/rubocop-hq/rubocop/issues/4222
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
+
+# Rails の環境一覧を定義
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - staging
+    - development
+    - test
