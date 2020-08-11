@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::ArticlesController < ApplicationController
   def index
     article = Article.order(created_at: :desc)

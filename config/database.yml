@@ -13,7 +13,7 @@ development:
 test:
   adapter: mysql2
   database: riinsworkspace_test
-  host: <%= ENV['CI'].present? ? '127.0.0.1' : 'db' %>
+  host: <%= Rails.application.config.db.hostname %>
   username: 'root'
   password: 'password'
   pool: 5
