@@ -1,0 +1,22 @@
+{
+  "name": "RiinsWorkspaceAPI",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://fruitriin@github.com/fruitriin/RiinsWorkspaceAPI",
+  "author": "fruitriin <nassii74@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+  "lint-staged": {
+    ".rb": [
+      "rubocop -a"
+    ]
+  }
+}
