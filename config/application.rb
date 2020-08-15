@@ -32,6 +32,10 @@ module RiinsWorkspaceAPI
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
+
+    # 【危険】JSONのエンコードでHTMLエスケープをオフにする
+    ActiveSupport::JSON::Encoding.escape_html_entities_in_json = false
+
     config.api_only = true
   end
 end
