@@ -6,8 +6,8 @@
   "author": "fruitriin <nassii74@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11"
+    "husky": "4.2.5",
+    "lint-staged": "10.2.11"
   },
   "husky": {
     "hooks": {
