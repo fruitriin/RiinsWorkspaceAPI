@@ -6,7 +6,7 @@
   "author": "fruitriin <nassii74@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "husky": "4.2.5",
+    "husky": "6.0.0",
     "lint-staged": "10.2.11"
   },
   "husky": {
