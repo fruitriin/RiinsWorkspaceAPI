@@ -21,7 +21,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-json_matcher'
-  gem 'rspec-rails', '~> 4.0.0'
+  gem 'rspec-rails', '~> 4.1.0'
   gem 'rubocop'
   gem 'rubocop-rails'
 end
